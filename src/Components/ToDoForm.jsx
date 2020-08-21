@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 export default class ToDoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      priority: 'Urgent',
+      name: "",
+      priority: "Urgent",
     };
 
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -38,16 +38,32 @@ export default class ToDoForm extends React.Component {
     return (
       <form className="border p-2 m-2" onSubmit={this.handleSubmit}>
         <div className="form-inline w-100 my-2">
-          <input placeholder="Add task here" className="form-control mr-2" type="text" name="task" value={value} onChange={this.handleNameChange} />
+          <input
+            placeholder="Add task here"
+            className="form-control mr-2"
+            type="text"
+            name="task"
+            value={value}
+            onChange={this.handleNameChange}
+          />
           <label className="mx-2" htmlFor="prio">
             Priority:
-            <select className="form-control ml-1" name="prio" onChange={this.handlePriorityChange} value={value}>
+            <select
+              className="form-control ml-1"
+              name="prio"
+              onChange={this.handlePriorityChange}
+              value={value}
+            >
               {priorities.map((val, key) => (
-                <option key={key.toString()} value={val}>{val}</option>
+                <option key={key.toString()} value={val}>
+                  {val}
+                </option>
               ))}
             </select>
           </label>
-          <button type="submit" className="btn btn-primary">Add</button>
+          <button type="submit" className="btn btn-primary">
+            Add
+          </button>
         </div>
       </form>
     );
